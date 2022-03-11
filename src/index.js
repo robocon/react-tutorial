@@ -4,10 +4,27 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import HelloExternalComponent from './components/HelloExternalComponent'
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+
+class HelloComponentClass extends React.Component{
+  render(){
+    return <h1>Hello React Component Class</h1>
+  }
+}
+
+function HelloComponentFunction(){
+  return <h1>Hello React Component Function</h1>
+}
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <HelloExternalComponent/>,
   document.getElementById('root')
 );
 
