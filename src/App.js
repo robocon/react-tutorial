@@ -1,21 +1,16 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+import Transection from "./components/Transection"
 
-const Title = () => <h1>โปรแกรมบัญชี รายรับ-รายจ่าย</h1>
+const Title = () => <h1 style={{color:"blue",textDecoration:"underline"}}>โปรแกรมบัญชี รายรับ-รายจ่าย</h1>
 const Description = () => <p>บันทึกข้อมูลบัญชีในแต่ละวัน</p>
-const Transection = () => {
-	return (
-		<ul>
-			<li>ค่าเดินทาง <span>-200</span></li>
-			<li>เงินเดือน <span>+20,000</span></li>
-			<li>ค่าอาหาร <span>-500</span></li>
-		</ul>
-	)
-}
+
 function App() {
+	const design = {color:"red", textSize: "1.5em"}
 	return (
-		<div>
+		<div className='container'>
 			<Title/>
+			<h3 style={design}>ทดลองทำบัญชี</h3>
 			<Description/>
 			<Transection/>
 		</div>
