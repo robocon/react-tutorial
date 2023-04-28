@@ -4,8 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import HelloExternalComponent from './components/HelloExternalComponent'
-
 ReactDOM.render(
   <App/>,
   document.getElementById('root')
