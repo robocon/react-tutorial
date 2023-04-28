@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
-const Item = (props) => {
-    const{title, price} = props
+
+function Item(props){ 
+    const {title, price} = props;
+    const status = price<0 ? "expense" : "income" ;
+    const symbol = price<0 ? "-":"+";
     return(
-        <li>{title}<span>{price}</span></li>
-    )
+        <li className={status} >{title} <span>{symbol}{Math.abs(price)}</span></li>
+    );
 }
 
-Item.propTypes={
-    title:PropTypes.string,
-    price:PropTypes.number
+Item.propTypes = {
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired
 }
 
-export default Item
+export default Item;

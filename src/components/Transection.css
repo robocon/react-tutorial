@@ -3,13 +3,20 @@
     margin-bottom: 40px;
     list-style-type: none;
 }
+
 .item-list li{
-    background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     padding: 15px;
-    color: #333;
+    color:#333;
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin: 10px 0;
     position: relative;
+}
+.item-list li.income{
+    border-right: 4px solid green;
+}
+.item-list li.expense{
+    border-right: 4px solid red;
 }
