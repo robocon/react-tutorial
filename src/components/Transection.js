@@ -12,10 +12,10 @@ let Transection=(props)=>{
                 return <Item {...el} key={el.id}/>
             })
             }
-		</ul>
-        <DataContext.Consumer>
-            {value=><p>{value}</p>}
-        </DataContext.Consumer>
+		    </ul>
+            <DataContext.Consumer>
+                {value=><p>{value}</p>}
+            </DataContext.Consumer>
         </div>
 	);
 }

@@ -24,6 +24,7 @@ const FormComponent = (props)=>{
             title: title,
             price: Number(price)
         };
+        
         props.onAddItem(itemData);
 
         // reset to 0

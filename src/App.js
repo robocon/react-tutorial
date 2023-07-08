@@ -11,7 +11,7 @@ const Header=()=><h1>บัญชีรายรับ - รายจ่าย</
 function App() {  
 
 	let initData = [
-        // {id:uuidv4(), title:"ค่ารักษาพยาบาล", price:-2000},
+        {id:uuidv4(), title:"ค่ารักษาพยาบาล", price:-2000},
         // {id:uuidv4(), title:"เงินเดือน", price:30000},
         // {id:uuidv4(), title:"ค่าเดินทาง", price:-800}
     ];
@@ -20,8 +20,9 @@ function App() {
 
 	const [items, setItems] = useState(initData);
 	const onAddNewItem = (newItem)=>{
-		// ข้อมูลที่ส่งมาจากฟอร์ม
-		setItems((prevItem)=>{
+		// ข้อมูลที่ส่งมาจาก FormComponent.js
+		setItems((prevItem)=>{ // เอาข้อมูลเดิมที่อยู่ใน initdata ในที่นี้ตั้งชื่อเป็น prevItem 
+			// เอา newItem ที่เป็นข้อมูลที่ส่งมาจากฟอร์มมาต่อด้านหน้าข้อมูลเดิม
 			return [newItem,...prevItem];
 		})
 	}
