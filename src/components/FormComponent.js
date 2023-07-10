@@ -5,7 +5,7 @@ import './FormComponent.css';
 
 const FormComponent = (props)=>{ 
 
-    console.log("Render FormCompoment");
+    // console.log("Render FormCompoment");
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState(0);
     const [formValid, setFormValid] = useState(false);

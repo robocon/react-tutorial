@@ -11,6 +11,7 @@ input{
     display: block;
     width: 100%;
     padding: 10px;
+    margin: 10px 0;
 }
 .form-control{
     background-color: #f3f3f3;
