@@ -13,9 +13,6 @@ let Transection=(props)=>{
             })
             }
 		    </ul>
-            <DataContext.Consumer>
-                {value=><p>{value}</p>}
-            </DataContext.Consumer>
         </div>
 	);
 }
