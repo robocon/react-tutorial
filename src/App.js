@@ -41,8 +41,8 @@ function App() {
 		const income = amounts.filter(element => element > 0).reduce((sumIncome, element)=>sumIncome+=element, 0);
 		const expense = amounts.filter(element => element < 0).reduce((sumIncome, element)=>sumIncome+=element*-1, 0);
 
-		setReportIncome(formatNumber(income));
-		setReportExpense(formatNumber(expense));
+		setReportIncome(income);
+		setReportExpense(expense);
 	},[items, reportIncome, reportExpense])
 
 	return ( 

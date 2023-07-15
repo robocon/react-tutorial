@@ -12,11 +12,11 @@ const ReportComponent=()=>{
             <div className="report-container">
                 <div>
                     <h4>รายได้ทั้งหมด</h4>
-                    <p className="report plus">{income}</p>
+                    <p className="report plus">{formatNumber(income)}</p>
                 </div>
                 <div>
                     <h4>รายจ่ายทั้งหมด</h4>
-                    <p className="report minus">{expense}</p>
+                    <p className="report minus">{formatNumber(expense)}</p>
                 </div>
             </div>
         </div>
