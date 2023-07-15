@@ -5,9 +5,11 @@ import FormComponent from './components/FormComponent';
 import DataContext from './data/DataContext';
 import './App.css';
 import ReportComponent from './components/ReportComponent';
+import {formatNumber} from './Utilities.js';
+
 // Route เป็นตัวกำหนด Link
 // Link เป็น UI
-import { BrowserRouter as Router,Switch,Route,Link } from 'react-router-dom';
+import { BrowserRouter as Router,Route,Link, Routes } from 'react-router-dom';
 
 
 
@@ -39,8 +41,8 @@ function App() {
 		const income = amounts.filter(element => element > 0).reduce((sumIncome, element)=>sumIncome+=element, 0);
 		const expense = amounts.filter(element => element < 0).reduce((sumIncome, element)=>sumIncome+=element*-1, 0);
 
-		setReportIncome(income);
-		setReportExpense(expense);
+		setReportIncome(formatNumber(income));
+		setReportExpense(formatNumber(expense));
 	},[items, reportIncome, reportExpense])
 
 	return ( 
@@ -52,20 +54,31 @@ function App() {
 			}
 		}>
 			<div className='container'>
+				{/* สามารถเอาตัวแปร Header มาสร้างเป็น Tag แบบนี้ได้ */}
 				<Header />
-				<div>
-					<ul className="horizontal-menu">
-						<li>
-							<a href="#">ข้อมูลบัญชี</a>
-						</li>
-						<li>
-							<a href="#">บันทึกข้อมูล</a>
-						</li>
-					</ul>
-				</div>
-				<div><ReportComponent /></div>
-				<div><FormComponent onAddItem={onAddNewItem} /></div>
-				<div><Transection items={items}/></div>
+				<Router>
+					<div>
+						<ul className="horizontal-menu">
+							<li>
+								<Link to="/">ข้อมูลบัญชี</Link>
+							</li>
+							<li>
+								<Link to="insert">บันทึกข้อมูล</Link>
+							</li>
+						</ul>
+					</div>
+					<Routes>
+						<Route path="/" element={<ReportComponent />} />
+						<Route path="/insert" element={
+							<div>
+								<FormComponent onAddItem={onAddNewItem} /> 
+								<Transection items={items}/>
+							</div> 
+						} />
+					</Routes>
+				</Router>
+				
+				
 			</div>
 		</DataContext.Provider>
 	);

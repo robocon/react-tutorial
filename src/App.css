@@ -16,3 +16,20 @@ body{
   margin: 30px auto;
   width: 350px;
 }
+.horizontal-menu{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+}
+.horizontal-menu li{
+  display: inline-block;
+
+}
+.horizontal-menu a{
+  color: #333333;
+  text-decoration: none;
+  padding: 16px;
+  display: block;
+}
